@@ -69,17 +69,17 @@ def server():
     data=conn.recv(1024)
     print("client says: ",data.decode())
 
-    conn.send("hello from server ".encode())
+    conn.send("Hello from Saveetha ".encode())
     conn.close()
     s.close()
 
 def client():
-    time.sleep(1)  # wait for server to start
+    time.sleep(1)
 
     c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     c.connect(("127.0.0.1", 5000))
 
-    c.send("Hello from client".encode())
+    c.send("Welcome".encode())
 
     response = c.recv(1024)
     print("Server says:", response.decode())
@@ -94,10 +94,11 @@ client_thread.start()
 
 server_thread.join()
 client_thread.join()
+
 ```
 
 ## Output:
-<img width="1099" height="388" alt="Screenshot 2026-04-28 093145" src="https://github.com/user-attachments/assets/f80f8735-43d6-4ed1-aeda-a0daf7928cbe" />
+<img width="1135" height="477" alt="Screenshot 2026-04-28 094652" src="https://github.com/user-attachments/assets/080c2172-6f12-4cb6-bf06-ec65981f61c6" />
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
